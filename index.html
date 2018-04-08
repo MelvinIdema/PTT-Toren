@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="nl" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PTT-Toren - Tilt vergaderen naar een hoger niveau</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+  </head>
+  <body>
+  <div class="wrapper">
+    <header>
+    <nav>
+    <div class="logo">PTT</div>
+    <div class="menu">
+      <ul>
+        <li>Home</li>
+        <li>Reserveren</li>
+      </ul>
+    </div>
+    <div class="hamburger"><span class="icon"></span></div>
+    </nav>
+    <div class="hero">
+    <div class="hero-text"></div>
+    <div class="hero-sub">Tilt vergaderen naar een hoger niveau</div>
+    <div class="reserve-btn">Reserveren</div>
+    </div>
+    <div class="arrow">
+    <div class="arrow-txt">Of bekijk eerst ons ruime aanboud aan inspirerende vergaderzalen</div>
+    <div class="asset-arrow"><img src="images/assets/arrow.png" alt="arrow"></div>
+    </div>
+    </header>
+    <div id="gallery">
+      test
+    </div>
+    <div id="history">
+      test
+    </div>
+  </div>
+  <script>
+    $(window).scroll(function (event) {
+      var galleryOffset = $('#gallery').offset().top - $(window).scrollTop();
+      // Check if user is scrolled to end of header and invert colors
+      if(galleryOffset < 2){
+        $('nav').addClass('fixed');
+        $('.icon').addClass('invert');
+        $('.logo').css('display','block');
+        $('.menu').css('color','black');
+      } else {
+        $('nav').removeClass('fixed');
+        $('.icon').removeClass('invert');
+        $('.logo').css('display','none');
+        $('.menu').css('color','white');
+      }
+    });
+
+    // Smooth scroll when click on arrow
+    $('.asset-arrow').click(function() {
+      $('html,body').animate({
+        scrollTop: $('#gallery').offset().top }, 'slow');
+    });
+
+    // When hamburger is clicked show menu
+    $('.hamburger').click(function() {
+      $('.menu').toggleClass('menu-active');
+    });
+  </script>
+  </body>
+</html>

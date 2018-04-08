@@ -1,0 +1,211 @@
+/* Universeel */
+
+body, html {
+  padding: 0;
+  margin: 0;
+}
+
+/* Content */
+
+.wrapper {
+  display: grid;
+  height: 100%;
+  overflow: hidden;
+  grid-template-columns: 1fr 80vw 1fr;
+  grid-template-rows: 100vh 100vh 100vh;
+}
+
+/****
+ Header
+ ****/
+
+ header {
+   display: grid;
+   grid-template-columns: 1fr 50vw 1fr;
+   grid-template-rows: 65px 4fr 1fr 1fr;
+   grid-column: 1/4;
+   grid-row: 1;
+   background-image: url("../images/background-blurred.jpg");
+   background-size: cover;
+   background-position: center;
+   font-family: helvetica-neue, sans-serif;
+   color: white;
+ }
+
+/* nav */
+nav {
+  grid-row: 1;
+  grid-column: 1/4;
+  padding: 15px 0;
+  display: grid;
+  grid-template-columns: 2fr auto auto;
+  transition: all 2s ease;
+}
+
+.fixed {
+  position: fixed;
+  width: 100%;
+  height: 30px;
+  left: 0;
+  top: 0;
+  background: white;
+  box-shadow: 3px 0px 6px rgba(0,0,0,0.3);
+}
+
+/* Logo */
+
+.logo {
+  display: none;
+  color: black;
+  margin-left: 15px;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+/* Menu */
+.menu {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: end;
+  margin-top: 1.5px;
+  margin-right: 10px;
+  overflow: hidden;
+  width: 0px;
+  transition: all 700ms ease;
+}
+
+.menu-active {
+  width: 100%;
+}
+
+.menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.menu li {
+  display: inline-block;
+  padding: 5px;
+  cursor: pointer;
+}
+.menu li:hover {
+  color: #f1f1f1;
+}
+.menu .invert li:hover {
+  color: purple;
+}
+/* Hamburger Icon */
+
+nav .hamburger {
+  grid-column: 3;
+  cursor: pointer;
+  justify-self: end;
+  margin-right: 15px;
+}
+
+nav .hamburger .icon {
+  display: block;
+  position: relative;
+  width: 36px;
+  border: 3px solid white;
+  border-radius: 3px;
+  transition: all 2s ease;
+}
+
+nav .hamburger .icon:before,
+nav .hamburger .icon:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 36px;
+  border: 3px solid white;
+  border-radius: 3px;
+  left: -3px;
+  transition: all 2s ease;
+}
+
+nav .hamburger .icon.invert,
+nav .hamburger .icon.invert:after,
+nav .hamburger .icon.invert:before {
+  border-color: black;
+}
+
+nav .hamburger .icon:before {top:8px;}
+nav .hamburger .icon:after {top:19px;}
+
+.hero {
+  grid-column: 2;
+  grid-row: 2;
+  text-align: center;
+  align-self: center;
+}
+
+.hero-text {
+  font-size: 100px;
+  font-weight: bold;
+}
+
+.hero-text::after {
+  content: "PTT";
+}
+
+.hero-sub {
+  margin-top: -10px;
+  font-size: 20px;
+  font-weight: lighter;
+}
+
+.reserve-btn {
+  font-size: 20px;
+  max-width: 200px;
+  font-weight: bold;
+  border: 3px solid white;
+  border-radius: 7px;
+  padding: 2px 0;
+  text-align: center;
+  cursor: pointer;
+  margin: 20px auto 0 auto;
+}
+
+.arrow {
+  grid-column: 2;
+  grid-row: 4;
+  text-align: center;
+}
+
+.asset-arrow {
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.arrow-txt {
+  font-size: 15px;
+  font-weight: lighter;
+}
+
+/***
+Pages
+***/
+
+#gallery {
+  grid-column: 1/4;
+  grid-row: 2;
+  padding-top: 60px;
+}
+
+#history {
+  grid-column: 1/4;
+  grid-row: 3;
+}
+
+/***
+For desktop
+***/
+@media screen and (min-width: 992px) {
+  .hero-text::after {
+    content:"PTT-TOREN"
+  }
+  .hero-sub {
+    margin-top: -5px;
+  }
+}
