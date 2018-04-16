@@ -2,7 +2,7 @@
 <html lang="nl" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>PTT-Toren - Tilt vergaderen naar een hoger niveau</title>
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
@@ -30,12 +30,71 @@
     <div class="asset-arrow"><img src="images/assets/arrow.png" alt="arrow"></div>
     </div>
     </header>
-    <div id="gallery">
-      test
+    <div id="gallery" class="page">
+      <div class="gal">
+      <h1>Inspireer met één van onze vergaderzalen.</h1>
+      <div class="gallery">
+        <div class="bimg">
+          <div class="bimg-info">
+            <h2 id="bimg-header">Nastuh Abootalebi</h2>
+            <p id="bimg-subtext">Als vergaderen in stijl uw ding is, is de Nastuh Abootalebi de inspirerende vergaderomgeving van uw dromen.</p>
+          </div>
+          <img src="images/vergaderzalen/nastuh-abootalebi.jpg" alt="Benjamin Child" id="bigimage">
+        </div>
+        <img src="images/vergaderzalen/nastuh-abootalebi.jpg" alt="Nastuh Abootalebi" class="smimg" id="nastuh">
+        <img src="images/vergaderzalen/spaarwoudezaal.jpg" alt="Spaarwoudezaal" class="smimg" id="spaar">
+        <img src="images/vergaderzalen/henry-mcintosh.jpg" alt="Henry McIntosh" class="smimg" id="henry">
+      </div>
     </div>
-    <div id="history">
-      test
+      <div class="quote">
+        <blockquote>
+          Has anyone ever said, 'I wish I could go to more meetings today'?
+        </blockquote>
+      </div>
     </div>
+    <div id="history" class="page">
+      <div class="hist stripe">
+      <h1>Hoe ons verhaal begon.</h1>
+      <p>
+        Deze toren, die de Haarlemse industriewijk
+Waarderpolder siert, is een zogenaamde
+straalverbindingstoren en stamt uit 1972.
+Deze toren is 112 meter hoog en werd binnen
+vijfentwintig dagen gebouwd. In eerste instantie
+zorgde hij voor verbinding tussen
+Nederhorst den Berg en Rijkskuststation IJmuiden,
+een maand later werd de toren ingeschakeld voor
+het telefoonverkeer Haarlem-Amsterdam, en na
+een jaar werd de toren aangesloten op het
+ringnet voor heel Nederland. Tot de komst van de
+eerste straalverbindingen voor telefonie, werden
+gesprekken binnen Nederland altijd via kabels
+overgebracht. Maar wat via koperdraad mogelijk is
+kan ook met een radiogolf | Lees meer…
+      </p>
+      </div>
+      <div class="reservCTA">
+        <h1>Reserveer vandaag nog.</h1>
+        <div class="reserve-btn inverse">Reserveren</div>
+      </div>
+    </div>
+    <footer>
+      <div class="copyright">
+        Copyright 2018 Vastgoed Beheer haarlem
+      </div>
+      <div class="sitemap">
+        <div class="mapdiv">
+          <ul>
+            Sitemap:
+            <li>Home</li>
+            <li>Reserveren</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flogo">
+        <img src="images/vbh-logo.jpg" alt="VHB logo" width="60%">
+      </div>
+    </footer>
   </div>
   <script>
     $(window).scroll(function (event) {
@@ -63,6 +122,24 @@
     // When hamburger is clicked show menu
     $('.hamburger').click(function() {
       $('.menu').toggleClass('menu-active');
+    });
+
+    $('#henry').click(function() {
+       $('#bigimage').attr('src','images/vergaderzalen/henry-mcintosh.jpg');
+       $("#bimg-header").text("Henry McIntosh");
+       $("#bimg-subtext").text("Kleine vergadering? Meeting tussen twee personen? Doe het in de Henry McIntosh.");
+    });
+
+    $('#nastuh').click(function() {
+       $('#bigimage').attr('src','images/vergaderzalen/nastuh-abootalebi.jpg');
+       $("#bimg-header").text("Nastuh Abootalebi");
+       $("#bimg-subtext").text("Als vergaderen in stijl uw ding is, is de Nastuh Abootalebi de inspirerende vergaderomgeving van uw dromen.");
+    });
+
+    $('#spaar').click(function() {
+      $('#bigimage').attr('src','images/vergaderzalen/spaarwoudezaal.jpg');
+      $("#bimg-header").text("Spaarwoudezaal");
+      $("#bimg-subtext").text("Dit is de Spaarnwoudezaal, een prachtige vergaderomgeving met mooi uitzicht.");
     });
   </script>
   </body>

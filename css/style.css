@@ -3,6 +3,13 @@
 body, html {
   padding: 0;
   margin: 0;
+  font-family: helvetica-neue, sans-serif;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
 /* Content */
@@ -10,9 +17,8 @@ body, html {
 .wrapper {
   display: grid;
   height: 100%;
-  overflow: hidden;
   grid-template-columns: 1fr 80vw 1fr;
-  grid-template-rows: 100vh 100vh 100vh;
+  grid-template-rows: 100vh auto 100vh 30vh;
 }
 
 /****
@@ -28,7 +34,6 @@ body, html {
    background-image: url("../images/background-blurred.jpg");
    background-size: cover;
    background-position: center;
-   font-family: helvetica-neue, sans-serif;
    color: white;
  }
 
@@ -40,14 +45,13 @@ nav {
   display: grid;
   grid-template-columns: 2fr auto auto;
   transition: all 2s ease;
+  z-index: 99;
 }
 
 .fixed {
   position: fixed;
   width: 100%;
   height: 30px;
-  left: 0;
-  top: 0;
   background: white;
   box-shadow: 3px 0px 6px rgba(0,0,0,0.3);
 }
@@ -78,11 +82,6 @@ nav {
   width: 100%;
 }
 
-.menu ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
 .menu li {
   display: inline-block;
   padding: 5px;
@@ -187,16 +186,168 @@ nav .hamburger .icon:after {top:19px;}
 Pages
 ***/
 
+.page {
+  display: grid;
+  grid-template-columns: 1fr 90% 1fr;
+  grid-template-rows: 60px 70% 30%;
+}
+
+/** Gallery Page **/
+
 #gallery {
   grid-column: 1/4;
   grid-row: 2;
-  padding-top: 60px;
 }
+
+h1 {
+  margin-top: 20px;
+}
+
+/* Gallery */
+
+.gal {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+#gallery .gallery .bimg {
+  position: relative;
+  width: 100%;
+}
+
+#gallery .gallery .bimg img {
+  max-height:100%;
+  max-width:100%;
+  box-shadow: -2px -2px 4px rgba(0,0,0,0.4);
+  transition: all 2s ease;
+}
+
+.bimg-info {
+  position: absolute;
+  width: 100%;
+  color: white;
+  background: rgba(0,0,0,0.5);
+}
+
+.bimg-info h2,
+.bimg-info p {
+  margin: 10px;
+}
+
+.bimg-info p {
+  margin-top: -8px;
+  font-weight: lighter;
+}
+
+#gallery .gallery .smimg {
+  width: 30%;
+  min-height: 80px;
+  margin-right: 3.8%;
+  margin-top: 10px;
+  box-shadow: -2px -2px 4px rgba(0,0,0,0.4);
+  cursor: pointer;
+}
+
+#gallery .gallery .smimg:last-child {
+  margin-right: 0;
+}
+
+/* Quote */
+
+.quote {
+  grid-column: 2;
+  grid-row: 3;
+  padding: 20px;
+  height: 100%;
+  background: url("../images/quotes.png");
+  background-size: cover;
+}
+
+blockquote {
+  font-weight: bolder;
+  font-size: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+blockquote::after {
+  content: "-Matt Mullenweg";
+  font-weight: lighter;
+  font-size: 20px;
+}
+
+/* History */
 
 #history {
   grid-column: 1/4;
   grid-row: 3;
+
 }
+
+.hist {
+  grid-row: 2;
+  grid-column: 2;
+}
+
+.stripe {
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.reservCTA {
+  grid-row: 3;
+  grid-column: 2;
+  text-align: center;
+}
+
+.inverse {
+  color: black;
+  border-color: black;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.3);
+}
+
+
+/* Footer */
+footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-row: 4;
+  grid-column: 1/4;
+  background-color: #707070;
+  color: white;
+  padding-top: 40px;
+}
+
+.copyright {
+  grid-column: 1;
+  text-align: center;
+}
+
+.sitemap {
+  grid-column: 2;
+}
+
+.mapdiv {
+  width: 20%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sitemap ul li {
+  margin-left: 30px;
+}
+
+.flogo {
+  grid-column 3;
+  text-align: center;
+}
+/***
+For phone's in landscape mode
+ ***/
+ @media screen and (min-width: 667px) {
+   .wrapper {
+     grid-template-rows: 100vh auto 100vh 30vh;
+   }
+ }
 
 /***
 For desktop
@@ -207,5 +358,9 @@ For desktop
   }
   .hero-sub {
     margin-top: -5px;
+  }
+  .page {
+    grid-template-columns: 1fr 60% 1fr;
+    grid-template-rows: 60px 70% 30%;
   }
 }
